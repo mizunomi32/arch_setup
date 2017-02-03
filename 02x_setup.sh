@@ -38,3 +38,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=”@im=fcitx”
 EOF
 $YAOURT emacs atom firefox gimp vlc zsh pcmanfm gvfs ntfs-3g gvfs-mtp gvfs-gphoto2 gvfs-afc gvfs-smb sshfs tumbler ffmpegthumbnailer unzip libreoffice-still rxvt-unicode
+set +x
+echo "-----------------------"
+echo "X install finished."
+echo "-----------------------"

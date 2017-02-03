@@ -83,6 +83,6 @@ $CHROOT useradd -m -g wheel $NEW_USER
 $CHROOT passwd $NEW_USER
 
 set +x
-echo "-----------------"
-echo "install finished."
-echo "-----------------"
+echo "-----------------------"
+echo "core install finished."
+echo "-----------------------"
