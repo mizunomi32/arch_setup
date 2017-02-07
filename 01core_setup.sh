@@ -87,6 +87,8 @@ if [ $? -eq 1 ];then
 [archlinuxfr]
 SigLevel = Never
 Server = http://repo.archlinux.fr/\$arch
+[multilib]
+Include = /etc/pacman.d/mirrorlist
 EOF
 fi
 $CHROOT pacman -Sy --noconfirm archlinuxfr/yaourt
@@ -107,7 +109,8 @@ $CHROOT grub-install --target=${GRUBTARGET} --efi-directory=${ESPPATH} --bootloa
 #$CHROOT grub-install --target=i386-efi --efi-directory=/boot/efi --bootloader-id=arch_grub --recheck
 $CHROOT sed -i -e 's/^GRUB_TIMEOUT=5$/GRUB_TIMEOUT=1/' /etc/default/grub
 $CHROOT grub-mkconfig -o /boot/grub/grub.cfg
-
+$CHROOT mkdir /boot/EFI/boot
+$CHROOT cp /boot/EFI/arch_grub/grubx64.efi  /boot/EFI/boot/bootx64.efi
 # root passed
 $CHROOT passwd
 

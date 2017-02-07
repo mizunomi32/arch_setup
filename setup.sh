@@ -124,6 +124,10 @@ wget https://mizunomi32.github.io/arch_setup/02x_setup.sh
 chmod +x 02x_setup.sh
 ./02x_setup.sh ROOTPATH=${ROOTPATH} USERNAME=${USERNAME} VGA=${VGA}
 
+wget https://mizunomi32.github.io/arch_setup/03i3wm_setup.sh
+chmod +x 03i3wm_setup.sh
+./03i3wm_setup.sh ROOTPATH=${ROOTPATH} USERNAME=${USERNAME} VGA=${VGA}
+
 set +x
 echo "-----------------------"
 echo "ALL install finished."
