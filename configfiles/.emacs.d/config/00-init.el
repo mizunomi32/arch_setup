@@ -1,0 +1,19 @@
+;; 日本語UTF-8設定
+(set-locale-environment nil)
+(set-language-environment "Japanese")
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(prefer-coding-system 'utf-8)
+
+;; スタートアップメッセージ無効
+(setq inhibit-startup-message t)
+
+;; 終了時にオートセーブファイルを消去
+(setq delete-auto-seve-file t)
+
+;; 行数表示
+(global-linum-mode t)
+

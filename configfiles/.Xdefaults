@@ -1,0 +1,16 @@
+URxvt.allow_bold:           false
+URxvt*font: xft:Ricty:size=12:antialias=truei
+
+urxvt.saveLines: 1024
+urxvt.scrollBar: false
+
+urxvt.foreground: rgba:ffff/ffff/ffff/ffff
+urxvt.background: rgba:0000/0000/0000/cccc
+! perl 拡張
+URxvt.perl-ext-common: xim-onthespot,default,matcher
+! IMEのインライン表示
+URxvt.inputMethod: fcitx
+URxvt.preeditType: OnTheSpot
+! URLクリックで開く
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
