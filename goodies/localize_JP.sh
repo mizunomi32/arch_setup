@@ -37,14 +37,14 @@ cat >> /mnt/home/$USERNAME/.xprofile <<EOF
 export DefaultImModule=fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
-export XMODIFIERS=”@im=fcitx”
+export XMODIFIERS="@im=fcitx"
 EOF
 
 cat >> /mnt/home/$USERNAME/.xinitrc <<EOF
 export DefaultImModule=fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
-export XMODIFIERS=”@im=fcitx”
+export XMODIFIERS="@im=fcitx"
 EOF
 
 

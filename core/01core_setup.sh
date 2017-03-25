@@ -58,7 +58,7 @@ EOF
 # pacstrap
 #-------------
 pacstrap ${ROOTPATH} \
-  base base-devel vim openssh grub efibootmgr os-prober sudo
+  base base-devel vim openssh efibootmgr os-prober sudo refind-efi
 #-------------
 # genfstab
 #-------------
@@ -102,14 +102,15 @@ $CHROOT pacman -S --noconfirm iw wpa_supplicant dialog ntfs-3g
 # hostname
 $CHROOT echo "$NEW_HOSTNAME" > /${ROOTPATH}/etc/hostname
 
-# GRUB
-$CHROOT mkinitcpio -p linux
-$CHROOT grub-install --target=${GRUBTARGET} --efi-directory=${ESPPATH} --bootloader-id=arch_grub --recheck
+# refind
+$CHROOT refind-install
+#$CHROOT mkinitcpio -p linux
+#$CHROOT grub-install --target=${GRUBTARGET} --efi-directory=${ESPPATH} --bootloader-id=arch_grub --recheck
 
-$CHROOT sed -i -e 's/^GRUB_TIMEOUT=5$/GRUB_TIMEOUT=3/' /etc/default/grub
-$CHROOT grub-mkconfig -o /boot/grub/grub.cfg
-$CHROOT mkdir /boot/EFI/boot
-$CHROOT cp /boot/EFI/arch_grub/grubx64.efi  /boot/EFI/boot/bootx64.efi
+#$CHROOT sed -i -e 's/^GRUB_TIMEOUT=5$/GRUB_TIMEOUT=3/' /etc/default/grub
+#$CHROOT grub-mkconfig -o /boot/grub/grub.cfg
+#$CHROOT mkdir /boot/EFI/boot
+#$CHROOT cp /boot/EFI/arch_grub/grubx64.efi  /boot/EFI/boot/bootx64.efi
 
 # root passed
 $CHROOT passwd
